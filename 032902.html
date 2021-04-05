@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<title>Document</title>
+	<style>
+		body{
+			text-align: center;
+			background: darksalmon;
+		}
+		
+		.box1{
+		  position: relative;
+          width: 400px;
+		  height: 400px;
+		  background: url(032901.jpg);
+		}
+
+		.detail{
+			display: none;
+			transition: 0.8s;
+			position: absolute;
+			width: 400px;
+			height: 70px;
+			text-align: center;
+			line-height: 3;
+			color: white;
+		    /* margin-top: 330px; */
+			bottom: 0;
+			font-size: 25px;
+			background-color: rgba(0,0,0,0.5);
+		}
+
+		.wrap{
+			position: absolute;
+			width: 400px;
+			height: 400px;
+			transition: 0.8s;
+			background: url(032901.jpg);
+			filter: sepia(50%);
+			opacity: 0;
+			box-shadow:  0px 0px 60px #000 inset;
+		}	
+
+		.box2{
+			clear: both;
+			position: relative;
+          width: 400px;
+		  height: 400px;
+		  margin-top: 50px;
+		  background: url(032902.jpg);
+		  overflow: hidden;
+		} 
+
+		.wrap2{
+			position: absolute;
+			width: 400px;
+			height: 400px;
+			transition: 0.8s;
+			background: url(032902.jpg);
+			filter: sepia(50%);
+			opacity: 0;
+			box-shadow:  0px 0px 60px #000 inset;
+		}	
+
+		.detail2{
+			display:block;
+			margin-left: -400px;
+			transition: 0.8s;
+			position: absolute;
+			width: 400px;
+			height: 70px;
+			text-align: center;
+			line-height: 3;
+			color: white;
+		    /* margin-top: 330px; */
+			bottom: 0;
+			font-size: 25px;
+			background-color: rgba(0,0,0,0.5);
+		}
+		.box3{
+			clear: both;
+			position: relative;
+			transform: translateY(-20px);
+          width: 400px;
+		  height: 400px;
+		  margin-top: 50px;
+		  background: url(032903.jpg);
+		  overflow: hidden;
+		} 
+
+
+		.detail3{
+			display:block;
+			margin-bottom: -70px;
+			transition: 0.8s;
+			position: absolute;
+			width: 400px;
+			height: 70px;
+			text-align: center;
+			line-height: 3;
+			color: white;
+		    /* margin-top: 330px; */
+			bottom: 0;
+			font-size: 25px;
+			background-color: rgba(0,0,0,0.5);
+		}
+	</style>
+	<script>
+		$(function(){
+          $(".box1").hover(function(){
+           $(".wrap").css({"opacity":"1"});
+		   $(".detail").css({"display":"block"})
+		  }, function(){
+			$(".wrap").css({"opacity":"0"});
+		   $(".detail").css({"display":"none"});
+		  });
+
+          $(".box2").hover(function(){
+           $(".wrap2").css({"opacity":"1"});
+		   $(".detail2").css({"marginLeft":"0px"})
+		  }, function(){
+			$(".wrap2").css({"opacity":"0"});
+		   $(".detail2").css({"marginLeft":"-400px"});
+		  });
+
+		  $(".box3").mouseenter(function(){
+           $(".box3").css({"filter":"sepia(50%)","transform":""});
+		   $(".detail3").css({"marginBottom":"0px"})
+		  }, function(){
+			$(".wrap3").css({"opacity":"0"});
+		   $(".detail3").css({"marginBottom":"-70px"});
+		  });
+		});
+	</script>
+</head>
+<body>
+	<div class="box1">
+		<div class="wrap"></div>
+		<div class="detail">Snow Rabbit</div>
+	</div>
+	<div class="box2">
+		<div class="wrap2"></div>
+		<div class="detail2">Snow Rabbit</div>
+	</div>
+	<div class="box3">
+		<div class="detail3">Snow Rabbit</div>
+	</div>
+</body>
+</html>
